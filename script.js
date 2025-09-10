@@ -3,12 +3,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSwitchContainer = document.createElement('div');
     langSwitchContainer.classList.add('d-flex', 'align-items-center', 'ms-auto');
     langSwitchContainer.innerHTML = `
-    <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="en">EN</button>
-    <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="de">DE</button>
-    <button class="btn btn-light btn-sm lang-btn" data-lang="ar">AR</button>
-`;
+        <button class="btn btn-outline-light btn-sm me-2 lang-btn" data-lang="en">EN</button>
+        <button class="btn btn-outline-light btn-sm me-2 lang-btn" data-lang="de">DE</button>
+        <button class="btn btn-outline-light btn-sm lang-btn" data-lang="ar">AR</button>
+    `;
     document.getElementById('navbarNav').appendChild(langSwitchContainer);
-
 
     langSwitchContainer.addEventListener('click', (event) => {
         if (event.target.classList.contains('lang-btn')) {
@@ -22,7 +21,6 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!response.ok) throw new Error(`Cannot fetch translation: ${lang}`);
         return await response.json();
     }
-
 
     function applyTranslations(translations) {
         document.querySelectorAll('[data-i18n]').forEach(element => {
@@ -51,7 +49,6 @@ document.addEventListener('DOMContentLoaded', () => {
             document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
             localStorage.setItem('preferredLanguage', lang);
             updateActiveButton(lang);
-
             initializeTypingEffect(translations);
 
         } catch (error) {
@@ -84,9 +81,11 @@ document.addEventListener('DOMContentLoaded', () => {
             typeWriter(heroGreetingSpan, translations['hero.greeting']);
         }
     }
+
     const animationStyle = document.createElement('style');
     animationStyle.textContent = `
         .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
+        .force-ltr { direction: ltr !important; text-align: left !important; }
     `;
     document.head.appendChild(animationStyle);
 
@@ -106,8 +105,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('scroll', () => {
-        const navbar = document.querySelector('.navbar');
-        navbar.classList.toggle('scrolled', window.scrollY > 50);
+        document.querySelector('.navbar').classList.toggle('scrolled', window.scrollY > 50);
     });
 
     const scrolledNavStyle = document.createElement('style');
@@ -117,42 +115,51 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
-    document.querySelector('.contact-form form').addEventListener('submit', function(e) {
-        e.preventDefault();
+    const contactForm = document.querySelector('.contact-form form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = this.elements['name'].value;
+            const email = this.elements['email'].value;
+            const subject = this.elements['subject'].value;
+            const message = this.elements['message'].value;
 
-        const name = this.elements['name'].value;
-        const email = this.elements['email'].value;
-        const subject = this.elements['subject'].value;
-        const message = this.elements['message'].value;
+            if (!name || !email || !subject || !message) {
+                alert('Please fill out all fields');
+                return;
+            }
 
-        if (!name || !email || !subject || !message) {
-            alert('Please fill out all fields');
-            return;
-        }
+            const button = this.querySelector('button[type="submit"]');
+            const originalButtonHTML = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
+            button.disabled = true;
 
-        const button = this.querySelector('button[type="submit"]');
-        const originalButtonHTML = button.innerHTML;
-        button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
-        button.disabled = true;
-
-        setTimeout(() => {
-            button.innerHTML = '<i class="fas fa-check me-2"></i> Sent!';
-            button.classList.replace('btn-primary', 'btn-success');
-            this.reset();
             setTimeout(() => {
-                button.innerHTML = originalButtonHTML;
-                button.classList.replace('btn-success', 'btn-primary');
-                button.disabled = false;
-            }, 3000);
-        }, 1500);
-    });
+                button.innerHTML = '<i class="fas fa-check me-2"></i> Sent!';
+                button.classList.replace('btn-primary', 'btn-success');
+                this.reset();
+                setTimeout(() => {
+                    button.innerHTML = originalButtonHTML;
+                    button.classList.replace('btn-success', 'btn-primary');
+                    button.disabled = false;
+                }, 3000);
+            }, 1500);
+        });
+    }
 
+    const yearElement = document.getElementById('current-year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
 
-    document.getElementById('current-year').textContent = new Date().getFullYear();
     const initialLang = localStorage.getItem('preferredLanguage') || 'en';
     setLanguage(initialLang);
+
 });
