@@ -1,273 +1,157 @@
-// Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    });
-});
+document.addEventListener('DOMContentLoaded', () => {
 
-// Navbar background change on scroll
-window.addEventListener('scroll', function() {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
-    }
-});
-
-// Add scrolled class styles
-const style = document.createElement('style');
-style.textContent = `
-    .navbar.scrolled {
-        background-color: rgba(33, 37, 41, 0.95) !important;
-        backdrop-filter: blur(20px);
-        transition: all 0.3s ease;
-    }
+    const langSwitchContainer = document.createElement('div');
+    langSwitchContainer.classList.add('d-flex', 'align-items-center', 'ms-auto');
+    langSwitchContainer.innerHTML = `
+    <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="en">EN</button>
+    <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="de">DE</button>
+    <button class="btn btn-light btn-sm lang-btn" data-lang="ar">AR</button>
 `;
-document.head.appendChild(style);
+    document.getElementById('navbarNav').appendChild(langSwitchContainer);
 
-// Animate progress bars
-const observerOptions = {
-    threshold: 0.5,
-    rootMargin: '0px 0px -100px 0px'
-};
 
-const observer = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const progressBars = entry.target.querySelectorAll('.progress-bar');
-            progressBars.forEach(bar => {
-                const width = bar.style.width;
-                bar.style.width = '0%';
-                setTimeout(() => {
-                    bar.style.width = width;
-                }, 500);
-            });
+    langSwitchContainer.addEventListener('click', (event) => {
+        if (event.target.classList.contains('lang-btn')) {
+            const lang = event.target.getAttribute('data-lang');
+            setLanguage(lang);
         }
     });
-}, observerOptions);
 
-// Observe skills section
-const skillsSection = document.querySelector('#skills');
-if (skillsSection) {
-    observer.observe(skillsSection);
-}
-
-// Animate elements on scroll
-const animateOnScroll = new IntersectionObserver(function(entries) {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-});
-
-// Add animation styles
-const animationStyle = document.createElement('style');
-animationStyle.textContent = `
-    .animate-on-scroll {
-        opacity: 0;
-        transform: translateY(30px);
-        transition: opacity 1s ease, transform 1s ease;
+    async function fetchTranslations(lang) {
+        const response = await fetch(`translation/${lang}.json`);
+        if (!response.ok) throw new Error(`Cannot fetch translation: ${lang}`);
+        return await response.json();
     }
-`;
-document.head.appendChild(animationStyle);
 
-// Apply animation to elements
-document.addEventListener('DOMContentLoaded', function() {
-    const elementsToAnimate = document.querySelectorAll('.skill-card, .project-card, .contact-info');
-    elementsToAnimate.forEach(el => {
-        el.classList.add('animate-on-scroll');
-        animateOnScroll.observe(el);
-    });
-});
-
-// Contact form handling
-document.querySelector('.contact-form form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    
-    // Get form data
-    const formData = new FormData(this);
-    const name = this.querySelector('input[placeholder="الاسم"]').value;
-    const email = this.querySelector('input[placeholder="البريد الإلكتروني"]').value;
-    const subject = this.querySelector('input[placeholder="الموضوع"]').value;
-    const message = this.querySelector('textarea[placeholder="الرسالة"]').value;
-    
-    // Simple validation
-    if (!name || !email || !subject || !message) {
-        alert('Please fill out all fields');
-        return;
+    function applyTranslations(translations) {
+        document.querySelectorAll('[data-i18n]').forEach(element => {
+            const key = element.getAttribute('data-i18n');
+            if (key.startsWith('[') && key.includes(']')) {
+                const match = key.match(/\[(.*?)\](.*)/);
+                const attr = match[1];
+                const translationKey = match[2];
+                if (translations[translationKey]) {
+                    element.setAttribute(attr, translations[translationKey]);
+                }
+            } else {
+                if (translations[key]) {
+                    element.innerHTML = translations[key];
+                }
+            }
+        });
     }
-    
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
-    
-    // Show success message
-    const button = this.querySelector('button[type="submit"]');
-    const originalText = button.innerHTML;
-    button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i>Sending...';
-    button.disabled = true;
-    
-    // Simulate sending (replace with actual form submission)
-    setTimeout(() => {
-        button.innerHTML = '<i class="fas fa-check me-2"></i>Sent successfully!';
-        button.classList.remove('btn-primary');
-        button.classList.add('btn-success');
-        
-        // Reset form
-        this.reset();
-        
-        // Reset button after 3 seconds
-        setTimeout(() => {
-            button.innerHTML = originalText;
-            button.classList.remove('btn-success');
-            button.classList.add('btn-primary');
-            button.disabled = false;
-        }, 3000);
-    }, 2000);
-});
 
-// Add typing effect to hero title
-function typeWriter(element, text, speed = 100) {
-    let i = 0;
-    element.innerHTML = '';
-    
-    function type() {
-        if (i < text.length) {
-            element.innerHTML += text.charAt(i);
-            i++;
-            setTimeout(type, speed);
+    async function setLanguage(lang) {
+        try {
+            const translations = await fetchTranslations(lang);
+            applyTranslations(translations);
+
+            document.documentElement.lang = lang;
+            document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
+            localStorage.setItem('preferredLanguage', lang);
+            updateActiveButton(lang);
+
+            initializeTypingEffect(translations);
+
+        } catch (error) {
+            console.error('Failed to set language:', error);
         }
     }
-    
-    type();
-}
 
-// Initialize typing effect when page loads
-document.addEventListener('DOMContentLoaded', function() {
-    const heroTitle = document.querySelector('.hero-content h1');
-    if (heroTitle) {
-        const originalText = heroTitle.textContent;
-        setTimeout(() => {
-            typeWriter(heroTitle, originalText, 30);
-        }, 0);
+    function updateActiveButton(activeLang) {
+        document.querySelectorAll('.lang-btn').forEach(btn => {
+            btn.classList.toggle('active', btn.getAttribute('data-lang') === activeLang);
+        });
     }
-});
 
-// Add particle effect to hero section
-function createParticles() {
-    const heroSection = document.querySelector('.hero-section');
-    const particlesContainer = document.createElement('div');
-    particlesContainer.className = 'particles-container';
-    particlesContainer.style.cssText = `
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 1;
+    function typeWriter(element, text, speed = 50) {
+        let i = 0;
+        element.innerHTML = '';
+        function type() {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+                setTimeout(type, speed);
+            }
+        }
+        type();
+    }
+
+    function initializeTypingEffect(translations) {
+        const heroGreetingSpan = document.querySelector('[data-i18n="hero.greeting"]');
+        if (heroGreetingSpan && translations['hero.greeting']) {
+            typeWriter(heroGreetingSpan, translations['hero.greeting']);
+        }
+    }
+    const animationStyle = document.createElement('style');
+    animationStyle.textContent = `
+        .animate-on-scroll { opacity: 0; transform: translateY(20px); transition: opacity 0.8s ease, transform 0.8s ease; }
     `;
-    
-    for (let i = 0; i < 50; i++) {
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        particle.style.cssText = `
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            animation: float ${3 + Math.random() * 4}s ease-in-out infinite;
-            animation-delay: ${Math.random() * 2}s;
-            left: ${Math.random() * 100}%;
-            top: ${Math.random() * 100}%;
-        `;
-        particlesContainer.appendChild(particle);
-    }
-    
-    heroSection.appendChild(particlesContainer);
-}
+    document.head.appendChild(animationStyle);
 
-// Initialize particles
-document.addEventListener('DOMContentLoaded', createParticles);
+    const animateOnScrollObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                animateOnScrollObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
 
-// Add hover effects to project cards
-document.querySelectorAll('.project-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transform = 'translateY(-15px) scale(1.02)';
+    document.querySelectorAll('.skill-card, .project-card, .contact-info, .about-content, .about-image').forEach(el => {
+        el.classList.add('animate-on-scroll');
+        animateOnScrollObserver.observe(el);
     });
-    
-    card.addEventListener('mouseleave', function() {
-        this.style.transform = 'translateY(0) scale(1)';
-    });
-});
 
-// Add click effect to buttons
-document.querySelectorAll('.btn').forEach(button => {
-    button.addEventListener('click', function(e) {
-        const ripple = document.createElement('span');
-        const rect = this.getBoundingClientRect();
-        const size = Math.max(rect.width, rect.height);
-        const x = e.clientX - rect.left - size / 2;
-        const y = e.clientY - rect.top - size / 2;
-        
-        ripple.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            left: ${x}px;
-            top: ${y}px;
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 50%;
-            transform: scale(0);
-            animation: ripple 0.6s ease-out;
-            pointer-events: none;
-        `;
-        
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
-        this.appendChild(ripple);
-        
-        setTimeout(() => {
-            ripple.remove();
-        }, 600);
+    window.addEventListener('scroll', () => {
+        const navbar = document.querySelector('.navbar');
+        navbar.classList.toggle('scrolled', window.scrollY > 50);
     });
-});
 
-// Add ripple animation
-const rippleStyle = document.createElement('style');
-rippleStyle.textContent = `
-    @keyframes ripple {
-        to {
-            transform: scale(2);
-            opacity: 0;
+    const scrolledNavStyle = document.createElement('style');
+    scrolledNavStyle.textContent = `.navbar.scrolled { background-color: rgba(33, 37, 41, 0.9) !important; backdrop-filter: blur(10px); }`;
+    document.head.appendChild(scrolledNavStyle);
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({ behavior: 'smooth' });
+        });
+    });
+
+    document.querySelector('.contact-form form').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = this.elements['name'].value;
+        const email = this.elements['email'].value;
+        const subject = this.elements['subject'].value;
+        const message = this.elements['message'].value;
+
+        if (!name || !email || !subject || !message) {
+            alert('Please fill out all fields');
+            return;
         }
-    }
-`;
-document.head.appendChild(rippleStyle);
 
-// footer date update
-document.addEventListener('DOMContentLoaded', function() {
-    const currentYear = new Date().getFullYear();
-    const yearElement = document.getElementById('current-year');
-    if (yearElement) {
-        yearElement.textContent = currentYear;
-    }
+        const button = this.querySelector('button[type="submit"]');
+        const originalButtonHTML = button.innerHTML;
+        button.innerHTML = '<i class="fas fa-spinner fa-spin me-2"></i> Sending...';
+        button.disabled = true;
+
+        setTimeout(() => {
+            button.innerHTML = '<i class="fas fa-check me-2"></i> Sent!';
+            button.classList.replace('btn-primary', 'btn-success');
+            this.reset();
+            setTimeout(() => {
+                button.innerHTML = originalButtonHTML;
+                button.classList.replace('btn-success', 'btn-primary');
+                button.disabled = false;
+            }, 3000);
+        }, 1500);
+    });
+
+
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+    const initialLang = localStorage.getItem('preferredLanguage') || 'en';
+    setLanguage(initialLang);
 });
-

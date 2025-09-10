@@ -10,135 +10,129 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">
-                <i class="fas fa-code me-2"></i>Waeel
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">About me</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Let's work together</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#home">
+            <i class="fas fa-code me-2"></i>Waeel
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
 
-    <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
-            <div class="row align-items-lg-center py-5 py-lg-0 min-vh-lg-100">
+            <li class="nav-item">
+                    <a class="nav-link" href="#home" data-i18n="nav.home"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#about" data-i18n="nav.about"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#skills" data-i18n="nav.skills"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#projects" data-i18n="nav.projects"></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact" data-i18n="nav.contact"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- Hero Section -->
+<section id="home" class="hero-section">
+    <div class="container">
+        <div class="row align-items-lg-center py-5 py-lg-0 min-vh-lg-100">
 
             <div class="col-lg-6">
-                    <div class="hero-content">
-                        <h1 class="display-4 fw-bold mb-3">
-                             <span class="text-primary">hey, I'm Wael</span>
-                        </h1>
-                        <h2 class="h4 text-light mb-4">A Software Developer</h2>
-                        <p class="lead mb-4">
-                            I develop modern and responsive web applications using the latest technologies.
-                        </p>
-                        <div class="hero-buttons">
-                            <a href="#projects" class="btn btn-primary btn-lg me-3">
-                                <i class="fas fa-eye me-2"></i>Show business
-                            </a>
-                            <a href="#contact" class="btn btn-outline-primary btn-lg">
-                                <i class="fas fa-envelope me-2"></i>Contact me
-                            </a>
-                        </div>
+                <div class="hero-content">
+                    <h1 class="display-4 fw-bold mb-3">
+                        <span class="text-primary" data-i18n="hero.greeting"></span>
+                    </h1>
+                    <h2 class="h4 text-light mb-4" data-i18n="hero.title"></h2>
+                    <p class="lead mb-4" data-i18n="hero.description"></p>
+                    <div class="hero-buttons">
+                        <a href="#projects" class="btn btn-primary btn-lg me-3">
+                            <i class="fas fa-eye me-2"></i><span data-i18n="hero.button.show_business"></span>
+                        </a>
+                        <a href="#contact" class="btn btn-outline-primary btn-lg">
+                            <i class="fas fa-envelope me-2"></i><span data-i18n="hero.button.contact_me"></span>
+                        </a>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="hero-image text-center">
-                        <div class="profile-card">
-                            <div class="profile-avatar">
-                                <img src="WaelAlHamad.jpg" alt="Waeel" class="avatar-img">
-                            </div>
-                            <div class="floating-icons">
-                                <i class="fab fa-laravel"></i>
-                                <i class="fab fa-php"></i>
-                                <i class="fab fa-js-square"></i>
-                                <i class="fab fa-html5"></i>
-                                <i class="fab fa-css3-alt"></i>
-                                <i class="fa-brands fa-git-alt"></i>
-                                <i class="fa-brands fa-bitbucket"></i>
-                                <i class="fa-solid fa-code-branch"></i>
-                                <i class="fa-brands fa-atlassian"></i>
-                                <i class="fa-brands fa-python"></i>
-                            </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="hero-image text-center">
+                    <div class="profile-card">
+                        <div class="profile-avatar">
+                            <img src="WaelAlHamad.jpg" alt="Waeel" class="avatar-img">
+                        </div>
+                        <div class="floating-icons">
+                            <i class="fab fa-laravel"></i>
+                            <i class="fab fa-php"></i>
+                            <i class="fab fa-js-square"></i>
+                            <i class="fab fa-html5"></i>
+                            <i class="fab fa-css3-alt"></i>
+                            <i class="fa-brands fa-git-alt"></i>
+                            <i class="fa-brands fa-bitbucket"></i>
+                            <i class="fa-solid fa-code-branch"></i>
+                            <i class="fa-brands fa-atlassian"></i>
+                            <i class="fa-brands fa-python"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title">About me</h2>
-                    <p class="text-muted">
-                        Learn about my experience and career path</p>
-                </div>
+<!-- About Section -->
+<section id="about" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="section-title" data-i18n="about.title"></h2>
+                <p class="text-muted" data-i18n="about.subtitle"></p>
             </div>
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-content">
-                        <h3 class="mb-4">
-                            Web developer with a passion for technology</h3>
-                        <p class="mb-4">
-                            I've been working in web development for two years, specializing in developing web applications using Laravel and PHP.
-                            I love creating innovative technology solutions that help businesses achieve their digital goals.
-                        </p>
-                        <div class="row">
-                            <div class="col-sm-6">
-                                <div class="stat-item">
-                                    <h4 class="text-primary">5+</h4>
-                                    <p>Completed project</p>
-                                </div>
+        </div>
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <div class="about-content">
+                    <h3 class="mb-4" data-i18n="about.heading"></h3>
+                    <p class="mb-4" data-i18n="about.paragraph"></p>
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="stat-item">
+                                <h4 class="text-primary">5+</h4>
+                                <p data-i18n="about.stat.projects"></p>
                             </div>
-                            <div class="col-sm-6">
-                                <div class="stat-item">
-                                    <h4 class="text-primary">2+</h4>
-                                    <p>Years of experience</p>
-                                </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="stat-item">
+                                <h4 class="text-primary">2+</h4>
+                                <p data-i18n="about.stat.experience"></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6">
-                    <div class="about-image">
-                        <div class="code-preview">
-                            <div class="code-header">
-                                <span class="dot red"></span>
-                                <span class="dot yellow"></span>
-                                <span class="dot green"></span>
-                            </div>
-                            <div class="code-content">
+            </div>
+            <div class="col-lg-6">
+                <div class="about-image">
+                    <div class="code-preview">
+                        <div class="code-header">
+                            <span class="dot red"></span>
+                            <span class="dot yellow"></span>
+                            <span class="dot green"></span>
+                        </div>
+                        <div class="code-content">
                                 <pre><code>&lt;?php
 
-class Developer 
+class Developer
 {
-    public function __construct()
+    public function __construct( )
     {
         $this->name = 'Waeel';
         $this->skills = [
@@ -149,239 +143,239 @@ class Developer
             'MySQL', 'JIRA'
         ];
     }
-    
+
     public function createAwesome()
     {
         return 'Amazing Web Apps';
     }
 }</code></pre>
-                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title">Technical skills</h2>
-                    <p class="text-muted">Techniques and tools I master</p>
+<!-- Skills Section -->
+<section id="skills" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="section-title" data-i18n="skills.title"></h2>
+                <p class="text-muted" data-i18n="skills.subtitle"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-laravel"></i>
+                    </div>
+                    <h5>Laravel</h5>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 90%"></div>
+                    </div>
+                    <span class="skill-percentage">90%</span>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-laravel"></i>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-php"></i>
+                    </div>
+                    <h5>PHP</h5>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 85%"></div>
+                    </div>
+                    <span class="skill-percentage">85%</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fab fa-js-square"></i>
+                    </div>
+                    <h5>JavaScript</h5>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 80%"></div>
+                    </div>
+                    <span class="skill-percentage">80%</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 mb-4">
+                <div class="skill-card">
+                    <div class="skill-icon">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <h5>MySQL</h5>
+                    <div class="progress">
+                        <div class="progress-bar" style="width: 75%"></div>
+                    </div>
+                    <span class="skill-percentage">75%</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5 bg-light">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="section-title" data-i18n="projects.title"></h2>
+                <p class="text-muted" data-i18n="projects.subtitle"></p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shopping-cart fa-3x text-primary"></i>
+                    </div>
+                    <div class="project-content">
+                        <h5 data-i18n="project1.title"></h5>
+                        <p data-i18n="project1.description"></p>
+                        <div class="project-tech">
+                            <span class="badge bg-primary">Laravel</span>
+                            <span class="badge bg-secondary">PHP</span>
+                            <span class="badge bg-info">MySQL</span>
                         </div>
-                        <h5>Laravel</h5>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 90%"></div>
+                        <div class="project-links mt-3">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-eye me-1"></i><span data-i18n="project.button.preview"></span>
+                            </a>
+                            <a href="https://github.com/Waeel1996/Portfolio" class="btn btn-outline-secondary btn-sm">
+                                <i class="fab fa-github me-1"></i><span data-i18n="project.button.code"></span>
+                            </a>
                         </div>
-                        <span class="skill-percentage">90%</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-php"></i>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-tasks fa-3x text-success"></i>
+                    </div>
+                    <div class="project-content">
+                        <h5 data-i18n="project2.title"></h5>
+                        <p data-i18n="project2.description"></p>
+                        <div class="project-tech">
+                            <span class="badge bg-primary">Laravel</span>
+                            <span class="badge bg-warning">JavaScript</span>
+                            <span class="badge bg-success">Bootstrap</span>
                         </div>
-                        <h5>PHP</h5>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 85%"></div>
+                        <div class="project-links mt-3">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-eye me-1"></i><span data-i18n="project.button.preview"></span>
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm">
+                                <i class="fab fa-github me-1"></i><span data-i18n="project.button.code"></span>
+                            </a>
                         </div>
-                        <span class="skill-percentage">85%</span>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fab fa-js-square"></i>
-                        </div>
-                        <h5>JavaScript</h5>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 80%"></div>
-                        </div>
-                        <span class="skill-percentage">80%</span>
+            </div>
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-blog fa-3x text-warning"></i>
                     </div>
-                </div>
-                <div class="col-lg-3 col-md-6 mb-4">
-                    <div class="skill-card">
-                        <div class="skill-icon">
-                            <i class="fas fa-database"></i>
+                    <div class="project-content">
+                        <h5 data-i18n="project3.title"></h5>
+                        <p data-i18n="project3.description"></p>
+                        <div class="project-tech">
+                            <span class="badge bg-primary">Laravel</span>
+                            <span class="badge bg-secondary">PHP</span>
+                            <span class="badge bg-dark">TinyMCE</span>
                         </div>
-                        <h5>MySQL</h5>
-                        <div class="progress">
-                            <div class="progress-bar" style="width: 75%"></div>
+                        <div class="project-links mt-3">
+                            <a href="#" class="btn btn-outline-primary btn-sm">
+                                <i class="fas fa-eye me-1"></i><span data-i18n="project.button.preview"></span>
+                            </a>
+                            <a href="#" class="btn btn-outline-secondary btn-sm">
+                                <i class="fab fa-github me-1"></i><span data-i18n="project.button.code"></span>
+                            </a>
                         </div>
-                        <span class="skill-percentage">75%</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="py-5 bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title">Projects</h2>
-                    <p class="text-muted">Samples of my work and achievements</p>
-                </div>
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center mb-5">
+                <h2 class="section-title" data-i18n="contact.title"></h2>
+                <p class="text-muted" data-i18n="contact.subtitle"></p>
             </div>
-            <div class="row">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-shopping-cart fa-3x text-primary"></i>
-                        </div>
-                        <div class="project-content">
-                            <h5>Online store - Totalo</h5>
-                            <p>An integrated e-commerce platform developed with Laravel with a product and order management system.</p>
-                            <div class="project-tech">
-                                <span class="badge bg-primary">Laravel</span>
-                                <span class="badge bg-secondary">PHP</span>
-                                <span class="badge bg-info">MySQL</span>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto">
+                <div class="contact-form">
+                    <form>
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <input type="text" class="form-control" data-i18n="[placeholder]contact.form.name" required>
                             </div>
-                            <div class="project-links mt-3">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fas fa-eye me-1"></i>Preview
-                                </a>
-                                <a href="https://github.com/Waeel1996/Portfolio" class="btn btn-outline-secondary btn-sm">
-                                    <i class="fab fa-github me-1"></i>Code
-                                </a>
+                            <div class="col-md-6 mb-3">
+                                <input type="email" class="form-control" data-i18n="[placeholder]contact.form.email" required>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-tasks fa-3x text-success"></i>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" data-i18n="[placeholder]contact.form.about" required>
                         </div>
-                        <div class="project-content">
-                            <h5>Task management system</h5>
-                            <p>A web application for managing tasks and projects with a modern and responsive user interface.</p>
-                            <div class="project-tech">
-                                <span class="badge bg-primary">Laravel</span>
-                                <span class="badge bg-warning">JavaScript</span>
-                                <span class="badge bg-success">Bootstrap</span>
-                            </div>
-                            <div class="project-links mt-3">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fas fa-eye me-1"></i>Preview
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary btn-sm">
-                                    <i class="fab fa-github me-1"></i>Code
-                                </a>
-                            </div>
+                        <div class="mb-3">
+                            <textarea class="form-control" rows="5" data-i18n="[placeholder]contact.form.message" required></textarea>
                         </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="project-card">
-                        <div class="project-image">
-                            <i class="fas fa-blog fa-3x text-warning"></i>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary btn-lg">
+                                <i class="fas fa-paper-plane me-2"></i><span data-i18n="contact.form.send"></span>
+                            </button>
                         </div>
-                        <div class="project-content">
-                            <h5>Blogging platform</h5>
-                            <p>Content management system for blogs with an advanced text editor and commenting system</p>
-                            <div class="project-tech">
-                                <span class="badge bg-primary">Laravel</span>
-                                <span class="badge bg-secondary">PHP</span>
-                                <span class="badge bg-dark">TinyMCE</span>
-                            </div>
-                            <div class="project-links mt-3">
-                                <a href="#" class="btn btn-outline-primary btn-sm">
-                                    <i class="fas fa-eye me-1"></i>Preview
-                                </a>
-                                <a href="#" class="btn btn-outline-secondary btn-sm">
-                                    <i class="fab fa-github me-1"></i>Code
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    </form>
                 </div>
             </div>
         </div>
-    </section>
+        <div class="row mt-5">
+            <div class="col-lg-4 text-center mb-4">
 
-    <!-- Contact Section -->
-    <section id="contact" class="py-5">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center mb-5">
-                    <h2 class="section-title">Let's work together</h2>
-                    <p class="text-muted">Do you have a project?<br>Let us talk!</p>
+            </div>
+            <div class="col-lg-4 text-center mb-4">
+                <div class="contact-info">
+                    <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
+                    <h5 data-i18n="contact.info.email"></h5>
+                    <p>Waeelalhamad200@gmail.com</p>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <div class="contact-form">
-                        <form>
-                            <div class="row">
-                                <div class="col-md-6 mb-3">
-                                    <input type="text" class="form-control" placeholder="Name" required>
-                                </div>
-                                <div class="col-md-6 mb-3">
-                                    <input type="email" class="form-control" placeholder="Email" required>
-                                </div>
-                            </div>
-                            <div class="mb-3">
-                                <input type="text" class="form-control" placeholder="About" required>
-                            </div>
-                            <div class="mb-3">
-                                <textarea class="form-control" rows="5" placeholder="Message" required></textarea>
-                            </div>
-                            <div class="text-center">
-                                <button type="submit" class="btn btn-primary btn-lg">
-                                    <i class="fas fa-paper-plane me-2"></i>Send Message
-                                </button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
+            <div class="col-lg-4 text-center mb-4">
+
             </div>
-            <div class="row mt-5">
-                <div class="col-lg-4 text-center mb-4">
+        </div>
+    </div>
+</section>
 
-                </div>
-                <div class="col-lg-4 text-center mb-4">
-                    <div class="contact-info">
-                        <i class="fas fa-envelope fa-2x text-primary mb-3"></i>
-                        <h5>Email</h5>
-                        <p>Waeelalhamad200@gmail.com</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 text-center mb-4">
-
+<!-- Footer -->
+<footer class="bg-dark text-white py-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p>&copy; <span id="current-year"></span> <span data-i18n="footer.copyright"></span></p>
+                <div class="social-links">
+                    <a href="https://github.com/Waeel1996" class="text-white me-3" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="https://www.linkedin.com/in/wael-al-hamad-84746125b/" class="text-white me-3" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://wa.me/491733194159?text=Hello%20there%21" class="text-white me-3" target="_blank"><i class="fab fa-whatsapp"></i></a>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+</footer>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12 text-center">
-                    <p>&copy; <span id="current-year"></span> Wael. All rights reserved.</p>
-                    <div class="social-links">
-                        <a href="https://github.com/Waeel1996" class="text-white me-3" target="_blank"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/wael-al-hamad-84746125b/" class="text-white me-3" target="_blank"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://wa.me/491733194159?text=Hello%20there%21" class="text-white me-3" target="_blank"><i class="fab fa-whatsapp"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="script.js"></script>
 </body>
 </html>
