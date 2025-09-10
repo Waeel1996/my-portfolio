@@ -412,3 +412,10 @@ html {
     border-radius: 50%;
 }
 
+@media (min-width: 992px) {
+    .min-vh-lg-100 { min-height: 100vh; }
+}
+
+@media (max-width: 991.98px) {
+    .hero-section { padding-top: 4rem; }
+}
