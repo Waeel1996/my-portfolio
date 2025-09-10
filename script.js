@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return await response.json();
     }
 
+
     function applyTranslations(translations) {
         document.querySelectorAll('[data-i18n]').forEach(element => {
             const key = element.getAttribute('data-i18n');
