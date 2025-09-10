@@ -369,10 +369,7 @@ footer {
     .profile-card {
         margin-top: 40px;
     }
-    
-    .floating-icons {
-        display: none;
-    }
+    .floating-icons i:nth-child(10) { top: 43%; right: 20%; animation-delay: 1s; }
     
     .code-preview {
         margin-top: 40px;
