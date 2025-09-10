@@ -361,20 +361,20 @@ footer {
     .hero-section {
         text-align: center;
     }
-    
+
     .hero-content h1 {
         font-size: 2.5rem;
     }
-    
+
     .profile-card {
         margin-top: 40px;
     }
     .floating-icons i:nth-child(10) { top: 43%; right: 20%; animation-delay: 1s; }
-    
+
     .code-preview {
         margin-top: 40px;
     }
-    
+
     .skill-card {
         margin-bottom: 30px;
     }
