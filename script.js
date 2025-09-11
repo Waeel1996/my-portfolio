@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="ar">AR</button>
     <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="en">EN</button>
     <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="de">DE</button>
-    <button id="theme-toggle" class="btn btn-light btn-sm me-2 lang-btn"><i class="fas fa-moon"></i></button>
+    <button id="theme-toggle" class="btn btn-light btn-sm me-2"><i class="p-1 fas fa-moon"></i></button>
     `;
     const navbarNav = document.getElementById('navbarNav');
     if (navbarNav) {
@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', () => {
     async function setLanguage(lang) {
         try {
             const translations = await fetchTranslations(lang);
-            applyTranslations(translations); // This will now work correctly
+            applyTranslations(translations);
             document.documentElement.lang = lang;
             document.documentElement.dir = (lang === 'ar') ? 'rtl' : 'ltr';
             localStorage.setItem('preferredLanguage', lang);
