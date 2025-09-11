@@ -109,9 +109,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const langSwitchContainer = document.createElement('div');
     langSwitchContainer.className = 'd-flex align-items-center ms-auto';
     langSwitchContainer.innerHTML = `
-        <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="en">EN</button>
-        <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="de">DE</button>
-        <button class="btn btn-light btn-sm lang-btn" data-lang="ar">AR</button>
+    <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="ar">AR</button>
+    <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="en">EN</button>
+    <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="de">DE</button>
     `;
     const navbarNav = document.getElementById('navbarNav');
     if (navbarNav) {
