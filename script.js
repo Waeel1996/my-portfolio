@@ -112,6 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
     <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="ar">AR</button>
     <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="en">EN</button>
     <button class="btn btn-light btn-sm me-2 lang-btn" data-lang="de">DE</button>
+    <button id="theme-toggle" class="btn btn-light btn-sm me-2 lang-btn"><i class="fas fa-moon"></i></button>
     `;
     const navbarNav = document.getElementById('navbarNav');
     if (navbarNav) {
@@ -234,4 +235,33 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     initialize();
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeToggleIcon = themeToggle.querySelector('i');
+
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    const applyTheme = (theme) => {
+        document.documentElement.setAttribute('data-theme', theme);
+
+        localStorage.setItem('theme', theme);
+
+        if (theme === 'dark') {
+            themeToggleIcon.classList.remove('fa-moon');
+            themeToggleIcon.classList.add('fa-sun');
+        } else {
+            themeToggleIcon.classList.remove('fa-sun');
+            themeToggleIcon.classList.add('fa-moon');
+        }
+    };
+
+    applyTheme(currentTheme);
+
+    themeToggle.addEventListener('click', () => {
+        const newTheme = document.documentElement.getAttribute('data-theme') === 'dark' ? 'light' : 'dark';
+        applyTheme(newTheme);
+    });
 });
