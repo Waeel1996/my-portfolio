@@ -1,12 +1,3 @@
-/**
- * =================================================================================
- * Main JavaScript file (Corrected Version)
- *
- * FIX: The `applyTranslations` function has been corrected to properly handle
- * attribute translations like placeholders.
- * =================================================================================
- */
-
 document.addEventListener('DOMContentLoaded', () => {
 
     // PARTICLE EFFECT
@@ -237,6 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initialize();
 });
 
+//Dark mode
 document.addEventListener('DOMContentLoaded', () => {
 
     const themeToggle = document.getElementById('theme-toggle');
