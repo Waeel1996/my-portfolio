@@ -541,3 +541,209 @@ footer {
     color: var(--text-muted);
     opacity: 0.8;
 }
+.project-logo {
+    max-width: 240px;
+    max-height: 160px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tech .badge {
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 7px 10px;
+    border-radius: 999px;
+    letter-spacing: 0.2px;
+}
+
+/* Tech colors */
+.tech-php {
+    background: #777bb4;
+    color: #ffffff;
+}
+
+.tech-laravel {
+    background: #ff2d20;
+    color: #ffffff;
+}
+
+.tech-blade {
+    background: #f97316;
+    color: #ffffff;
+}
+
+.tech-mariadb {
+    background: #003545;
+    color: #ffffff;
+}
+
+.tech-js {
+    background: #f7df1e;
+    color: #1f2937;
+}
+
+.tech-alpine {
+    background: #77c1d2;
+    color: #0f172a;
+}
+
+.tech-tailwind {
+    background: #06b6d4;
+    color: #ffffff;
+}
+.tech-amazon {
+    background: #ff9900;
+    color: #111827;
+}
+
+.tech-awin {
+    background: #5b21b6;
+    color: #ffffff;
+}
+
+.tech-seo {
+    background: #16a34a;
+    color: #ffffff;
+}
+/* Clean glass tech badges - no glow */
+.project-tech {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 9px;
+    margin-bottom: 22px;
+}
+
+.project-tech .badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 7px 12px;
+    border-radius: 999px;
+
+    font-size: 0.76rem;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 0.2px;
+
+    background: rgba(255, 255, 255, 0.45) !important;
+    border: 1px solid rgba(0, 0, 0, 0.08);
+
+    box-shadow: none !important;
+    text-shadow: none !important;
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    transition: transform 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.project-tech .badge:hover {
+    transform: translateY(-1px);
+    box-shadow: none !important;
+}
+
+/* Individual clean colors */
+.project-tech .badge.tech-php {
+    color: #5f63a8 !important;
+    border-color: rgba(119, 123, 180, 0.45);
+    background: rgba(119, 123, 180, 0.10) !important;
+}
+
+.project-tech .badge.tech-laravel {
+    color: #dc2626 !important;
+    border-color: rgba(255, 45, 32, 0.40);
+    background: rgba(255, 45, 32, 0.09) !important;
+}
+
+.project-tech .badge.tech-blade {
+    color: #c2410c !important;
+    border-color: rgba(249, 115, 22, 0.42);
+    background: rgba(249, 115, 22, 0.10) !important;
+}
+
+.project-tech .badge.tech-mariadb {
+    color: #075985 !important;
+    border-color: rgba(0, 53, 69, 0.35);
+    background: rgba(0, 53, 69, 0.08) !important;
+}
+
+.project-tech .badge.tech-js {
+    color: #8a6d00 !important;
+    border-color: rgba(247, 223, 30, 0.55);
+    background: rgba(247, 223, 30, 0.18) !important;
+}
+
+.project-tech .badge.tech-alpine {
+    color: #0e7490 !important;
+    border-color: rgba(119, 193, 210, 0.50);
+    background: rgba(119, 193, 210, 0.13) !important;
+}
+
+.project-tech .badge.tech-tailwind {
+    color: #0891b2 !important;
+    border-color: rgba(6, 182, 212, 0.45);
+    background: rgba(6, 182, 212, 0.11) !important;
+}
+
+.project-tech .badge.tech-amazon {
+    color: #9a5f00 !important;
+    border-color: rgba(255, 153, 0, 0.45);
+    background: rgba(255, 153, 0, 0.12) !important;
+}
+
+.project-tech .badge.tech-awin {
+    color: #6d28d9 !important;
+    border-color: rgba(91, 33, 182, 0.38);
+    background: rgba(91, 33, 182, 0.10) !important;
+}
+
+.project-tech .badge.tech-seo {
+    color: #15803d !important;
+    border-color: rgba(22, 163, 74, 0.40);
+    background: rgba(22, 163, 74, 0.10) !important;
+}
+
+/* Dark mode */
+[data-theme="dark"] .project-tech .badge {
+    background: rgba(255, 255, 255, 0.06) !important;
+    box-shadow: none !important;
+}
+
+[data-theme="dark"] .project-tech .badge.tech-php,
+[data-theme="dark"] .project-tech .badge.tech-laravel,
+[data-theme="dark"] .project-tech .badge.tech-blade,
+[data-theme="dark"] .project-tech .badge.tech-mariadb,
+[data-theme="dark"] .project-tech .badge.tech-js,
+[data-theme="dark"] .project-tech .badge.tech-alpine,
+[data-theme="dark"] .project-tech .badge.tech-tailwind,
+[data-theme="dark"] .project-tech .badge.tech-amazon,
+[data-theme="dark"] .project-tech .badge.tech-awin,
+[data-theme="dark"] .project-tech .badge.tech-seo {
+    color: #f8fafc !important;
+}
+
+/* Keep project buttons fixed at the bottom of each card */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.project-content {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+}
+
+.project-links {
+    margin-top: auto !important;
+    padding-top: 18px;
+}
