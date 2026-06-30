@@ -19,14 +19,14 @@
   "skills.subtitle": "التقنيات والأدوات التي أتقنها",
   "projects.title": "المشاريع",
   "projects.subtitle": "عينات من أعمالي وإنجازاتي",
-  "project1.title": "متجر إلكتروني - توتالو",
-  "project1.description": "منصة تجارة إلكترونية متكاملة تم تطويرها باستخدام Laravel مع نظام لإدارة المنتجات والطلبات.",
+  "project1.title": "HeimStack",
+  "project1.description": "يساعد HeimStack المستخدمين على اختيار ومقارنة جهاز NAS المناسب من خلال توصيات ذكية، أدلة تقنية، ومقارنة أسعار مباشرة.",
   "project.button.preview": "معاينة",
   "project.button.code": "الكود",
-  "project2.title": "نظام إدارة المهام",
-  "project2.description": "تطبيق ويب لإدارة المهام والمشاريع بواجهة مستخدم عصرية ومتجاوبة.",
-  "project3.title": "منصة تدوين",
-  "project3.description": "نظام إدارة محتوى للمدونات مع محرر نصوص متقدم ونظام للتعليقات.",
+  "project2.title": "Tajm Transport",
+  "project2.description": "تقدم TajmTransport خدمات نقل احترافية للأفراد والشركات، مع خدمات التفريغ، التغليف، تركيب الأثاث، وعروض أسعار ثابتة وشفافة.",
+  "project3.title": "Reinwert Berlin",
+  "project3.description": "تقدم Reinwer Berlin خدمات تنظيف موثوقة للأفراد والشركات في برلين، وتشمل تنظيف المنازل، المكاتب، والعناية الاحترافية بالعقارات.",
   "contact.title": "لنعمل معاً",
   "contact.subtitle": "هل لديك مشروع؟ دعنا نتحدث!",
   "contact.form.name": "الاسم",
@@ -36,5 +36,6 @@
   "contact.form.send": "إرسال الرسالة",
   "contact.info.email": "البريد الإلكتروني",
   "footer.copyright": "وائل. جميع الحقوق محفوظة.",
-  "about.button.download_cv": "تحميل سيرتي الذاتية"
+  "about.button.download_cv": "تحميل سيرتي الذاتية",
+  "project.button.preview3": "قريباً"
 }
