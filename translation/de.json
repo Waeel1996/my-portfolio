@@ -19,14 +19,14 @@
   "skills.subtitle": "Techniken und Werkzeuge, die ich beherrsche",
   "projects.title": "Projekte",
   "projects.subtitle": "Beispiele meiner Arbeit und Erfolge",
-  "project1.title": "Online-Shop - Totalo",
-  "project1.description": "Eine integrierte E-Commerce-Plattform, die mit Laravel entwickelt wurde und über ein Produkt- und Bestellverwaltungssystem verfügt.",
+  "project1.title": "HeimStack",
+  "project1.description": "HeimStack hilft Nutzern, das passende NAS-System durch smarte Empfehlungen, technische Ratgeber und Live-Preisvergleiche zu finden und zu vergleichen.",
   "project.button.preview": "Vorschau",
   "project.button.code": "Code",
-  "project2.title": "Aufgabenverwaltungssystem",
-  "project2.description": "Eine Webanwendung zur Verwaltung von Aufgaben und Projekten mit einer modernen und responsiven Benutzeroberfläche.",
-  "project3.title": "Blogging-Plattform",
-  "project3.description": "Content-Management-System für Blogs mit einem fortschrittlichen Texteditor und Kommentarsystem",
+  "project2.title": "Tajm Transport",
+  "project2.description": "Tajm Transport bietet professionelle Privat- und Firmenumzüge, Entrümpelungen, Verpackungsservice, Möbelmontage und transparente Festpreisangebote.",
+  "project3.title": "Reinwert Berlin",
+  "project3.description": "Reinwer Berlin bietet zuverlässige Reinigungsservices für Privat- und Geschäftskunden in Berlin, darunter Wohnungsreinigung, Büroreinigung und professionelle Objektpflege.",
   "contact.title": "Lass uns zusammenarbeiten",
   "contact.subtitle": "Haben Sie ein Projekt? Lassen Sie uns reden!",
   "contact.form.name": "Name",
@@ -36,5 +36,6 @@
   "contact.form.send": "Nachricht senden",
   "contact.info.email": "E-Mail",
   "footer.copyright": "Wael. Alle Rechte vorbehalten.",
-  "about.button.download_cv":"Lebenslauf herunterladen"
+  "about.button.download_cv":"Lebenslauf herunterladen",
+  "project.button.preview3": "Demnächst"
 }
