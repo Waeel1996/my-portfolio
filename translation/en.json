@@ -19,14 +19,14 @@
   "skills.subtitle": "Techniques and tools I master",
   "projects.title": "Projects",
   "projects.subtitle": "Samples of my work and achievements",
-  "project1.title": "Online store - Totalo",
-  "project1.description": "An integrated e-commerce platform developed with Laravel with a product and order management system.",
+  "project1.title": "HeimStack",
+  "project1.description": "HeimStack helps users find, compare, and choose the right NAS system through smart recommendations, technical guides, and live price comparisons.",
   "project.button.preview": "Preview",
   "project.button.code": "Code",
-  "project2.title": "Task management system",
-  "project2.description": "A web application for managing tasks and projects with a modern and responsive user interface.",
-  "project3.title": "Blogging platform",
-  "project3.description": "Content management system for blogs with an advanced text editor and commenting system",
+  "project2.title": "Tajm Transport",
+  "project2.description": "Tajm Transport offers professional residential and commercial moves, clearing services, packing services, furniture assembly, and transparent fixed-price quotes.",
+  "project3.title": "Reinwert Berlin",
+  "project3.description": "Reinwer Berlin provides reliable cleaning services for private and business customers in Berlin, including home cleaning, office cleaning, and professional property care.",
   "contact.title": "Let's work together",
   "contact.subtitle1": "Do you have a project?",
   "contact.subtitle2": "Let us talk!",
@@ -37,5 +37,6 @@
   "contact.form.send": "Send Message",
   "contact.info.email": "Email",
   "footer.copyright": "Wael. All rights reserved.",
-  "about.button.download_cv": "Download my CV"
+  "about.button.download_cv": "Download my CV",
+  "project.button.preview3": "Coming soon"
 }
