@@ -747,3 +747,35 @@ footer {
     margin-top: auto !important;
     padding-top: 18px;
 }
+.temporary-logo {
+    width: 96px;
+    height: 96px;
+    border-radius: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: rgba(0, 123, 255, 0.08);
+    border: 1px solid rgba(0, 123, 255, 0.18);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.temporary-logo i {
+    font-size: 2.6rem;
+}
+
+.clean-logo {
+    background: linear-gradient(
+            135deg,
+            rgba(0, 123, 255, 0.10),
+            rgba(6, 182, 212, 0.10)
+    );
+    border-color: rgba(6, 182, 212, 0.28);
+}
+
+.clean-logo i {
+    color: #0ea5e9;
+}
